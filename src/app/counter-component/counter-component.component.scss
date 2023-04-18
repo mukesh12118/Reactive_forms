@@ -1,0 +1,19 @@
+.counter_main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 20px 50px;
+    h3{
+        margin: 0 10px;
+        width: 30px;
+        text-align: center;
+
+    }
+    button{
+        &:hover{
+            box-shadow: unset;
+            transform: unset;
+        }
+    }
+}

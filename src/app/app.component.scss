@@ -1,0 +1,71 @@
+section{
+    background-color: rgba(247, 217, 177,0.4);
+    padding: 20px;
+}
+.app_main_container{
+    margin: 0;
+    padding: 0;
+    h1{
+        margin: 0;
+    }
+}
+.parent_encapsulate{
+    gap: 20px;
+    margin: 20px auto;
+    width: 70%;
+    height: 100%;
+}
+
+.encapsulate_component{
+    border: 1px solid red;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+}
+
+button{
+    background-color: rgb(7, 102, 165);
+    color: #fff;
+    border: none;
+    border-radius:5px;
+    padding: 3px 10px;
+    transition: 0.4s;
+    box-shadow: 0 0px 2px 2px rgba(211, 12, 12, 0.5);
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 0px 20px 2px rgba(128, 5, 5, 0.5);
+    }
+}
+
+.binding{
+    button{
+        margin-right: 10px;
+    }
+    img{
+        margin-top: 20px;
+        display: block;
+        height: 200px;
+        width: 300px;
+        object-fit: contain;
+        animation: animateImg 0.5s ;
+        @keyframes animateImg {
+            0%{height: 0;}
+            100%{height: 200px;}
+        }
+    }
+    .style_binding{
+        p{
+            margin: 10px 0;
+            &.font_color{
+                color: red;
+            }
+            &.font_size{
+                font-size: 20px;
+            }
+            &.bg_color{
+                background-color: rgb(55, 241, 55);
+            }
+        }
+    }
+}

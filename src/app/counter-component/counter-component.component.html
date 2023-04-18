@@ -1,0 +1,14 @@
+<hr>
+<div>
+    <h4>Counter</h4>
+    <div class="counter_main">
+        <app-count-decrement [parentData]="countData" (decrementCountEvent)="getDecrementData($event)">
+        </app-count-decrement>
+
+        <h3>{{countData}}</h3>
+
+        <app-count-increment [parentData]="countData" (incrementDataEvent)="getIncrementData($event)">
+        </app-count-increment>
+    </div>
+</div>
+<hr>

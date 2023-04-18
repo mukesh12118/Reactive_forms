@@ -1,0 +1,17 @@
+<p>projection works!</p>
+<ng-content></ng-content>
+<ng-content select="selectContent"></ng-content>
+
+
+
+<button (click)="onclickRender()">Click for conditional Render</button>
+
+
+<ng-container>
+    <div *ngIf="isContentLoad; else noloaded">Hello this is from conditional rendering</div>
+
+    <ng-template #noloaded>
+        <h4>else: No Content is loaded</h4>
+    </ng-template>
+
+</ng-container>

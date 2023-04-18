@@ -1,0 +1,23 @@
+:host {
+    background-color: rgb(236, 160, 160);
+    display: block;
+    padding: 20px;
+}
+
+// Active class from parent element (anchestor)
+
+:host-context(.active) {
+    h3 {
+        // color: blue;
+    }
+}
+
+:host .hello_host {
+    color: #2b1f6d;
+}
+
+:host::ng-deep{
+    h3{
+        color: #086931;
+    }
+}
