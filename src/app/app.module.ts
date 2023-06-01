@@ -15,6 +15,9 @@ import { ChildGetSetComponentComponent } from './component_interaction/component
 import { ProjectionComponent } from './projection/projection.component';
 import { DynamicDirective } from './DynamiComponent/dynamic.directive';
 import { ContainerOne, ContainerThree, ContainerTwo } from './DynamiComponent/Dynamic-component';
+import { UsingpipeComponent } from './usingpipe/usingpipe.component';
+import { NameSplitter } from './CustomPipe/CustomPipe';
+import { HighlightDirective } from './Directive/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ContainerOne, ContainerThree, ContainerTwo } from './DynamiComponent/Dy
     DynamicDirective,
     ContainerOne,
     ContainerTwo,
-    ContainerThree
+    ContainerThree,
+    UsingpipeComponent,
+    NameSplitter,
+    HighlightDirective
 
   ],
   imports: [

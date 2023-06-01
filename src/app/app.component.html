@@ -52,7 +52,7 @@
 
   <h4>Encapsulation</h4>
   <ul>
-    <li>Emulated : Only applied for responding component <br>
+    <li>Emulated : Only applied for responding component - default<br>
       Does not affect other/child component</li>
     <li>None : It acess all styles from parent</li>
     <li>ShadowDom : It blocks all styles from parent and globalStyles. </li>
@@ -77,52 +77,56 @@
 
   <h4>Component Interaction</h4>
 
-  <app-component-interaction></app-component-interaction>
+  <app-component-interaction #interactionChild></app-component-interaction>
 
-  <h4>Content Projection</h4>
+  <h4>Content Projection{{interactionChild.message}}</h4>
 
   <app-projection>
     <p>This is a projection from App</p>
-    <p class="selectContent">New content froms select</p>
+    <p selectCheck>This content loaded using a selector in ng-content</p>
   </app-projection>
-</section>
-<hr>
-<h3>Dynamic Component in Angular</h3>
-<ng-template AddDynamicHost></ng-template>
-
-<div class="binding">
-  <h3>Dynamic Images</h3>
-  <button (click)="loadImage('eifle')">Eiffel Tower</button>
-  <button (click)="loadImage('tree')">Tree</button>
-  <img *ngIf="dynamicImageSrc" src="../assets/Images/{{dynamicImageSrc}}.jpg" alt="">
-</div>
-<br>
-<hr>
-
-
-<div class="binding">
-  <h3>Binding</h3>
-
-  <h6>Property Binding</h6>
   <hr>
+  <h3>Dynamic Component in Angular</h3>
+  <ng-template AddDynamicHost></ng-template>
 
-  <h6>Attribute Binding</h6>
-  <p [innerText]="bindingSample"></p>
-  <hr>
-
-  <!-- style-binding  -->
-
-  <h6>Style binding</h6>
-  <div class="style_binding">
-    <p class="font_color">Angular Style binding - inline class</p>
-
-    <button (click) = styleBindClick()>Click to toggle class</button>
-
-    <p>Angular Style binding - variable class</p>
-    <p [ngClass]="classObj">Angular Style binding - [ngclass]</p>
+  <div class="binding">
+    <h3>Dynamic Images</h3>
+    <button (click)="loadImage('eifle')">Eiffel Tower</button>
+    <button (click)="loadImage('tree')">Tree</button>
+    <img *ngIf="dynamicImageSrc" [src]="dynamicImageSrc" alt="">
   </div>
+  <br>
+  <hr>
 
-</div>
 
-<br><br>
-<a href="#topc">Top</a>
+  <div class="binding">
+    <h3>Binding</h3>
+    <hr>
+
+    <h6>Attribute Binding</h6>
+
+    <img [src]="bindingImgSrc" alt="">
+    <p [innerText]="bindingSample"></p>
+
+    <hr>
+
+    <!-- style-binding  -->
+
+    <h5>Style binding</h5>
+    <div class="style_binding">
+      <p class="font_color">Angular Style binding - inline class</p>
+
+      <h6>Inline styles</h6>
+      <p [style.background-color]="'blue'" [style.color]="'#fff'">Inline style property for bg-color and color</p>
+      <h6>ngclass style binding</h6>
+      <p [ngClass]="classObj">Angular Style binding using- [ngclass]</p>
+    </div>
+
+  </div>
+  <br>
+  <h4>Pipes</h4>
+  <app-usingpipe></app-usingpipe>
+  <br><br>
+
+  <a href="#topc">Top</a>
+</section>

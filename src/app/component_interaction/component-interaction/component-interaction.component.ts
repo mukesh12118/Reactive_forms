@@ -17,13 +17,8 @@ export class ComponentInteractionComponent {
     this.nameElementRef.nativeElement.value = ""
   }
 
-  getValue: string = "";
-  getInpChange() {
-    console.log(this.getValue)
-  }
-
   // view child from child component
 
-  @ViewChild(ChildGetSetComponentComponent, { static: true }) childInpRef!: ChildGetSetComponentComponent;
+  // @ViewChild(ChildGetSetComponentComponent, { static: true }) childInpRef!: ChildGetSetComponentComponent;
 
 }

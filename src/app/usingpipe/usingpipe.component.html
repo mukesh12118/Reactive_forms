@@ -1,0 +1,37 @@
+<div class="pipe_mains">
+    <p>Date- {{mydate | date : "YYYY / MMM / d"}}</p>
+</div>
+
+<div class="pipe_mains">
+    <p>uppercase- {{checkUppercase | uppercase}}</p>
+    <p>lowercase- {{checkUppercase | lowercase}}</p>
+    <p>titlecase- {{checkTitle | titlecase}}</p>
+</div>
+
+<div class="pipe_mains">
+    <p>currency (Default us )- {{checkCurrency | currency}}</p>
+    <p>currency (Default us )- {{checkCurrency | currency :"INR" :"code": '4.2-1'}}</p>
+    <!-- currency | <currency type> : "code" or "symbol" :
+        4.1-1{ "min digits before decimal"}.{min digits after decimal}-{max digits after decimal}-->
+</div>
+
+<div class="pipe_mains">
+    <p>decimal (Default us )- {{checkCurrency | number:"2.2-2"}}</p>
+</div>
+
+<div class="pipe_mains">
+    <p appHighlight>Percentage (Default us )- {{checkPercent | percent:"1.2-2"}}</p>
+</div>
+
+
+<p>Custom Pipe- {{"New York" | nameSplitter:"1.2-2"}}</p>
+
+<div>
+
+    <p [ngStyle]="styleInline()">Inline style ngClass</p>
+    <button (click)="changeClass()">Click to toggle inline styles</button>
+
+</div>
+<br><br>
+<h6 appHighlight>Custom Directive </h6>
+<p appHighlight>Hover me!</p>

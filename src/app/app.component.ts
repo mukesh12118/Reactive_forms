@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, OnInit, ElementRef } from '@angular/core';
 import { ContainerOne, ContainerThree, ContainerTwo } from './DynamiComponent/Dynamic-component';
 import { DynamicDirective } from './DynamiComponent/dynamic.directive';
 @Component({
@@ -11,26 +11,25 @@ import { DynamicDirective } from './DynamiComponent/dynamic.directive';
 
 export class AppComponent implements OnInit {
 
-
   title = 'my_basic_app';
   showTogg = true;
   wishText = "This text is from parent component";
-
   message = ""
-
   show = true;
+
+
+  @ViewChild('interactionChild') interactionChildRef!: ElementRef
+
+
   parentToggClick() {
     this.showTogg = !this.showTogg;
   }
-
   getChildData(data: string) {
     this.message = data
   }
-
   clickTogg() {
     this.show = !this.show
   }
-
 
   // Dynamic container
 
@@ -50,7 +49,6 @@ export class AppComponent implements OnInit {
       this.createComp()
     }, 1000)
   }
-
   createComp() {
     this.AddDynamicRef.viewRef.clear();
     this.AddDynamicRef.viewRef.createComponent(this.component[this.indexVal])
@@ -61,30 +59,21 @@ export class AppComponent implements OnInit {
   dynamicImageSrc = ""
 
   loadImage(name: string) {
-    this.dynamicImageSrc = name
+    this.dynamicImageSrc = `../assets/Images/${name}.jpg`
   }
-
   // Binding
-
   bindingSample: string = "This is a sample binding"
+  bindingImgSrc = `../assets/Images/${"eifle"}.jpg`
 
   // style binding 
-
   bg_color = false
   font_size = false
 
-
-
-  styleBindClick() {
-    this.bg_color = true;
-    this.font_size = !this.font_size
-    console.log(!this.font_size)
-
-  }
   classObj = {
-    font_color: true,
+    font_color: false,
     font_size: this.font_size,
-    bg_color: this.bg_color
+    bg_color: !this.bg_color
   }
+
 
 }

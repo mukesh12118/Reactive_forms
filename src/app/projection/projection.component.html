@@ -1,11 +1,8 @@
 <p>projection works!</p>
-<ng-content></ng-content>
-<ng-content select="selectContent"></ng-content>
-
-
+<!-- <ng-content></ng-content> -->
+<ng-content select="[selectCheck]"></ng-content>   
 
 <button (click)="onclickRender()">Click for conditional Render</button>
-
 
 <ng-container>
     <div *ngIf="isContentLoad; else noloaded">Hello this is from conditional rendering</div>

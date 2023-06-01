@@ -7,18 +7,16 @@ import { Component, OnInit, OnDestroy, OnChanges, DoCheck } from "@angular/core"
 })
 
 export class LifecycleComponent implements OnInit, OnDestroy, OnChanges, DoCheck {
-
     ngOnChanges() {
-        console.log("onchange")
+        console.log("onchange");
     }
     ngOnInit() {
         console.log("OnInit Lifecycle");
     }
     ngDoCheck() {
-        console.log("DOCheck")
+        console.log("DOCheck");
     }
-
     ngOnDestroy() {
-        console.log("Destroyed lifecycle")
+        console.log("Destroyed lifecycle");
     }
 }
